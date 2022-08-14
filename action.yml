@@ -1,0 +1,28 @@
+name: Action Lint
+description: eslint code at pull request
+author: xunserver
+
+branding:
+  icon: 'check-square'
+  color: green
+
+runs:
+  using: 'node 18'
+  main: 'dist/index.js'
+
+inputs:
+  bin_path:
+    description: 'set eslint path, default is node_modules/.bin/eslint'
+    default: 'node_modules/.bin/eslint'
+    require: false
+  ext:
+    description: file extensions to eslint
+    default: '.ts,.tsx,.js,.jsx,.vue'
+    require: false
+  config_file:
+    description: set a eslint config file path, base the workspace
+    require: false
+  args:
+    description: eslint cli extra args
+    require: false
+
